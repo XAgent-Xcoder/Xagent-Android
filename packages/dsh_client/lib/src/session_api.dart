@@ -750,7 +750,8 @@ class DshClient {
   Future<ModelCatalog> listSessionModels(String sessionId) async {
     final catalog = asMapOrEmpty(
       await rpc.call('session/modelCatalog', {
-        'request': {'sessionId': sessionId, 'refresh': true},
+        // Match the desktop picker so the Host can reuse its Codex prefetch.
+        'request': {'sessionId': sessionId},
       }),
     );
     // Managed Hosts return the active CLI model under "current".
