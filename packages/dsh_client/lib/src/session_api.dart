@@ -747,11 +747,15 @@ class DshClient {
   }
 
   /// Managed sessions must use their own catalog, never the Host-wide cache.
-  Future<ModelCatalog> listSessionModels(String sessionId) async => ModelCatalog.fromJson(
-    await rpc.call('session/modelCatalog', {
-      'request': {'sessionId': sessionId},
-    }),
-  );
+  Future<ModelCatalog> listSessionModels(String sessionId) async {
+    final catalog = asMapOrEmpty(
+      await rpc.call('session/modelCatalog', {
+        'request': {'sessionId': sessionId, 'refresh': true},
+      }),
+    );
+    // Managed Hosts return the active CLI model under "current".
+    return ModelCatalog.fromJson({...catalog, 'default': catalog['current'] ?? catalog['default']});
+  }
 
   /// Switch this session's model, retaining the selection-only API.
   Future<ModelSelection> setModel(
