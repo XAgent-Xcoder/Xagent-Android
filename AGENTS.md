@@ -1,5 +1,11 @@
 # AGENTS.md
 
+## 测试资源约定（2026-11-23，用户最新要求）
+
+- 今后所有测试的资源预算，按测试启动时空闲 CPU 与可用内存的三分之一到二分之一设置，默认采用三分之一，需要时可提高，但不得超过二分之一。
+- 同时运行的测试按进程树合计计算，不能让每个测试各自占用这一比例；资源变化时重新评估并调整预算。
+- 测试结束释放进程及资源，不影响现有生产服务。本约定取代历史验证记录中不同的资源预算规则；历史记录保留当时实际执行情况。
+
 dsh-Go 是 DeepSeek Harness 的手机应用：Flutter 原生界面 + 纯 Dart 客户端 + 打过补丁的 DSH 引擎运行时。Android 版在 PRoot 里运行 `dsh web`；鸿蒙版共用同一套 Dart，宿主是 ArkTS（`app/ohos/`），引擎跑在 App 进程内的 Node 里（`runtime/ohos/`，见 [docs/architecture.md §3B](docs/architecture.md)）。改动前先读 [CONTRIBUTING.md](CONTRIBUTING.md)（贡献与验证契约）与 [docs/architecture.md](docs/architecture.md)。
 
 ## 仓库布局
