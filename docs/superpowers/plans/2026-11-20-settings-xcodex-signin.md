@@ -96,3 +96,12 @@ Co-Authored-By: Claude Code <noreply@anthropic.com>"
 ```
 
 ---
+
+## 后续两轮改动（已实现，晚于本文定稿）
+
+Phase A 交付后又做了两轮，未随计划回写，这里补齐：
+
+- **副标题去掉「扫码配对」**：`hubSettingsOrApiKey` 定稿为「使用浏览器授权登录」/ `Sign in in a browser`，不再提扫码配对——推翻 Step 3 的文案。
+- **xcodex 已登录显示账号身份**：概览卡新增 `case _ when xcodex != null:` 分支（`settings_screen.dart`），xcodex 账号优先于 DeepSeek 账号展示 `displayName` 与「已登录」。验收测试 `settings_overview_xcodex_test.dart` 已按此新行为断言。
+
+---

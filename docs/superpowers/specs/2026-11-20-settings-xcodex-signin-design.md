@@ -33,3 +33,10 @@ App 转向远程引擎模式。原设置概览卡的「登录 DeepSeek 账号 / 
 
 - 副标题具体措辞（浏览器授权 / 扫码配对的描述）。
 - xcodex 已登录后的卡片表现沿用现有 remoteOnly / 远程分支逻辑，不新增。
+
+## 后续两轮改动（已实现，晚于本文定稿）
+
+Phase A 交付后又做了两轮，未随计划文档一并回写，这里补齐：
+
+- **副标题去掉「扫码配对」**：`hubSettingsOrApiKey` 定稿为「使用浏览器授权登录」/ `Sign in in a browser`，不再提扫码配对。
+- **xcodex 已登录显示账号身份**：概览卡**新增** `case _ when xcodex != null:` 分支（`settings_screen.dart`），xcodex 账号优先于 DeepSeek 账号展示——显示该账号的 `displayName` 与「已登录」副标题。上面「不新增」的判断就此推翻，以本条为准。
