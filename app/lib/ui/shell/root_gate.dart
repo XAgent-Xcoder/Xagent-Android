@@ -51,7 +51,7 @@ OnboardingStep? initialOnboardingStep({
   required OnboardingPrefs prefs,
   bool hasCustomProvider = false,
 }) {
-  // AgentPort is remote-only: the onboarding flow (runtime unpack, DeepSeek
+  // Xagent is remote-only: the onboarding flow (runtime unpack, DeepSeek
   // key entry, 本机/远程 choice) is skipped entirely. The home shell shows
   // the DSH Remote sign-in card and the remote host list directly. The
   // [OnboardingFlow] widgets still exist for the local-runtime path but are

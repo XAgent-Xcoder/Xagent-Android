@@ -21,10 +21,10 @@ class L10nEn extends L10n {
 
   @override
   String get a11yRestoreNotice =>
-      'Once authorized, accessibility will be turned back on if disabled in system settings. To stop phone control, turn it off in AgentPort.';
+      'Once authorized, accessibility will be turned back on if disabled in system settings. To stop phone control, turn it off in Xagent.';
 
   @override
-  String get a11yRestoreForceStop => 'After a force stop, reopen AgentPort to restore the service.';
+  String get a11yRestoreForceStop => 'After a force stop, reopen Xagent to restore the service.';
 
   @override
   String get a11yRestoreGrant => 'Authorize and enable';
@@ -60,7 +60,7 @@ class L10nEn extends L10n {
   String get a11yRestoreCopied => 'Command copied';
 
   @override
-  String get accessPickTitle => 'What should AgentPort help with?';
+  String get accessPickTitle => 'What should Xagent help with?';
 
   @override
   String get accessPickMessage => 'Pick any, then turn each one on';
@@ -183,7 +183,7 @@ class L10nEn extends L10n {
   String get accessAutostartTitle => 'Allow auto-start';
 
   @override
-  String get accessAutostartWhy => 'Lets AgentPort come back after the system clears it';
+  String get accessAutostartWhy => 'Lets Xagent come back after the system clears it';
 
   @override
   String accessVivoAutostartPath(String app) {
@@ -205,7 +205,7 @@ class L10nEn extends L10n {
   String get accessPopupTitle => 'Allow pop-ups in background';
 
   @override
-  String get accessPopupWhy => 'Brings you back to AgentPort when phone control is done';
+  String get accessPopupWhy => 'Brings you back to Xagent when phone control is done';
 
   @override
   String accessVivoPopupPath(String app) {
@@ -2843,7 +2843,7 @@ class L10nEn extends L10n {
   String get botsForumSubtitle => 'Ask, share, connect';
 
   @override
-  String get botsProjectHome => 'AgentPort project home';
+  String get botsProjectHome => 'Xagent project home';
 
   @override
   String get botsOpenSource => 'Open-source project';
@@ -6437,7 +6437,7 @@ class L10nEn extends L10n {
   String get engineAccountFinishInBrowser => 'Finish sign-in in your browser';
 
   @override
-  String get engineAccountReturnToDsh => 'Return to AgentPort after signing in';
+  String get engineAccountReturnToDsh => 'Return to Xagent after signing in';
 
   @override
   String get engineAccountFinishingSignIn => 'Finishing sign-in';
@@ -8957,7 +8957,7 @@ class L10nEn extends L10n {
 
   @override
   String get harmonyNotificationSettingsFailed =>
-      'Couldn’t open system settings. Turn on notifications in Settings → Notifications & status bar → AgentPort.';
+      'Couldn’t open system settings. Turn on notifications in Settings → Notifications & status bar → Xagent.';
 
   @override
   String get harmonySearchUnavailable => 'This isn\'t available in this version';
@@ -9102,7 +9102,7 @@ class L10nEn extends L10n {
   String get harmonyLiveBlockedTitle => 'The system isn\'t allowing progress notifications';
 
   @override
-  String get harmonyLiveBlockedText => 'Turn on notifications for AgentPort in system settings';
+  String get harmonyLiveBlockedText => 'Turn on notifications for Xagent in system settings';
 
   @override
   String get harmonyAlertsOffTitle => 'Alert notifications are off';
@@ -9370,7 +9370,7 @@ class L10nEn extends L10n {
 
   @override
   String get hubSettingsStorageDenied =>
-      'Storage access wasn’t granted. Allow “All files access” for AgentPort in system settings, then try again.';
+      'Storage access wasn’t granted. Allow “All files access” for Xagent in system settings, then try again.';
 
   @override
   String get hubSettingsRestartRequired => 'Takes effect after restarting the engine';
@@ -9763,10 +9763,10 @@ class L10nEn extends L10n {
   String get hubTableTintNoneHint => 'Grid lines only, the lightest';
 
   @override
-  String get hubAbout => 'About AgentPort';
+  String get hubAbout => 'About Xagent';
 
   @override
-  String get hubAboutAuthor => 'Original author of AgentPort';
+  String get hubAboutAuthor => 'Original author of Xagent';
 
   @override
   String get hubAboutBilibili => 'Bilibili profile';
@@ -9849,7 +9849,7 @@ class L10nEn extends L10n {
   String get iosSaveToFiles => 'Save to Files';
 
   @override
-  String get iosFilesFolderHint => 'AgentPort folder in the Files app';
+  String get iosFilesFolderHint => 'Xagent folder in the Files app';
 
   @override
   String get iosSavingToFiles => 'Saving to Files…';
@@ -9862,7 +9862,7 @@ class L10nEn extends L10n {
 
   @override
   String get iosNotificationSettingsFailed =>
-      'Couldn’t open system settings. Turn on notifications in Settings → AgentPort → Notifications.';
+      'Couldn’t open system settings. Turn on notifications in Settings → Xagent → Notifications.';
 
   @override
   String get iosVoiceSystemHint => 'Use the system’s speech recognition';
@@ -10329,7 +10329,7 @@ class L10nEn extends L10n {
 
   @override
   String get iconShortcutNote =>
-      'Android doesn’t let an app use any picture as its icon, so this adds a separate shortcut that opens AgentPort. Some home screens put a small badge on its corner.';
+      'Android doesn’t let an app use any picture as its icon, so this adds a separate shortcut that opens Xagent. Some home screens put a small badge on its corner.';
 
   @override
   String get iconShortcutAdded => 'Added to your home screen';
@@ -10338,7 +10338,7 @@ class L10nEn extends L10n {
   String get iconShortcutConfirm => 'Confirm in the dialog that appears';
 
   @override
-  String get iconShortcutNoDialog => 'No dialog? Allow AgentPort to create home screen shortcuts in system settings.';
+  String get iconShortcutNoDialog => 'No dialog? Allow Xagent to create home screen shortcuts in system settings.';
 
   @override
   String get iconShortcutSettings => 'Settings';
@@ -10577,11 +10577,11 @@ class L10nEn extends L10n {
   String get liveUnsupported => 'This phone\'s system doesn\'t support live activities yet';
 
   @override
-  String get liveBlockedTitle => 'Live activities are off for AgentPort';
+  String get liveBlockedTitle => 'Live activities are off for Xagent';
 
   @override
   String get liveBlockedText =>
-      'Turn on live activities for AgentPort in system settings (some phones call it “Show on Live Alerts”)';
+      'Turn on live activities for Xagent in system settings (some phones call it “Show on Live Alerts”)';
 
   @override
   String get localeTitle => 'Language';
@@ -10761,7 +10761,7 @@ class L10nEn extends L10n {
   String get marketSectionOfficial => 'Official';
 
   @override
-  String get marketSectionAdapted => 'Made for AgentPort';
+  String get marketSectionAdapted => 'Made for Xagent';
 
   @override
   String get marketSectionAll => 'All';
@@ -10779,7 +10779,7 @@ class L10nEn extends L10n {
   String get marketTierOfficial => 'Official';
 
   @override
-  String get marketTierAdapted => 'Made for AgentPort';
+  String get marketTierAdapted => 'Made for Xagent';
 
   @override
   String get marketRiskMedium => 'Medium risk';
@@ -10826,11 +10826,10 @@ class L10nEn extends L10n {
   String get marketFlagObfuscatedBody => 'Has large minified or obfuscated files; hard to tell what they do';
 
   @override
-  String get marketFlagNotAdapted => 'Not made for AgentPort';
+  String get marketFlagNotAdapted => 'Not made for Xagent';
 
   @override
-  String get marketFlagNotAdaptedBody =>
-      'Declares no AgentPort native protocol, so it has no native screens in the app';
+  String get marketFlagNotAdaptedBody => 'Declares no Xagent native protocol, so it has no native screens in the app';
 
   @override
   String get marketFlagOtherBody => 'Another trait the automatic checks reported';
@@ -10866,11 +10865,11 @@ class L10nEn extends L10n {
   String get marketPinnedVersion => 'Pinned version';
 
   @override
-  String get marketRequiresApp => 'Requires AgentPort';
+  String get marketRequiresApp => 'Requires Xagent';
 
   @override
   String marketNeedsApp(String version) {
-    return 'Needs AgentPort $version or later';
+    return 'Needs Xagent $version or later';
   }
 
   @override
@@ -11717,7 +11716,7 @@ class L10nEn extends L10n {
   String get phoneEngineLogs => 'Logs';
 
   @override
-  String get phoneEngineAutoStart => 'Start when AgentPort opens';
+  String get phoneEngineAutoStart => 'Start when Xagent opens';
 
   @override
   String get phoneEngineKeepAlive => 'Background running';
@@ -12031,7 +12030,7 @@ class L10nEn extends L10n {
 
   @override
   String get phoneDndShizukuPermissionFailed =>
-      'Permission not granted. Allow AgentPort in Shizuku’s “Application management”.';
+      'Permission not granted. Allow Xagent in Shizuku’s “Application management”.';
 
   @override
   String get phoneDndPairedConnect => 'Paired. Tap “Connect”.';
@@ -12137,11 +12136,11 @@ class L10nEn extends L10n {
 
   @override
   String get phoneDndRootConnected =>
-      'Root is connected. If it drops, choose it here again; AgentPort asks for root on its own only with “Keep root channel” enabled under More settings.';
+      'Root is connected. If it drops, choose it here again; Xagent asks for root on its own only with “Keep root channel” enabled under More settings.';
 
   @override
   String get phoneDndRootConnectedKept =>
-      'Root is connected. If it drops, AgentPort asks your root manager again on its own.';
+      'Root is connected. If it drops, Xagent asks your root manager again on its own.';
 
   @override
   String get phoneDndRootRetry => 'Ask for root again';
@@ -12157,10 +12156,10 @@ class L10nEn extends L10n {
       'Open Shizuku and follow “Start via Wireless debugging” (requires Wi-Fi). This page refreshes when you return.';
 
   @override
-  String get phoneDndGrantShizukuHint => 'Shizuku is running. Allow AgentPort to use it next.';
+  String get phoneDndGrantShizukuHint => 'Shizuku is running. Allow Xagent to use it next.';
 
   @override
-  String get phoneDndGrantShizuku => 'Allow AgentPort';
+  String get phoneDndGrantShizuku => 'Allow Xagent';
 
   @override
   String get phoneDndShizukuAllSet => 'Shizuku is running and authorized. Connect the background screen next.';
@@ -12172,7 +12171,7 @@ class L10nEn extends L10n {
   String get phoneDndShizukuRunning => 'Shizuku running';
 
   @override
-  String get phoneDndShizukuGranted => 'AgentPort allowed';
+  String get phoneDndShizukuGranted => 'Xagent allowed';
 
   @override
   String get phoneDndShizukuCompatibility =>
@@ -12286,7 +12285,7 @@ class L10nEn extends L10n {
   String get phoneOpenAccessibilityFailed => 'Can’t open settings. Find DSH in Settings → Accessibility.';
 
   @override
-  String get phoneOpenAppInfoFailed => 'Can’t open app info. Find AgentPort in Settings → Apps.';
+  String get phoneOpenAppInfoFailed => 'Can’t open app info. Find Xagent in Settings → Apps.';
 
   @override
   String get phoneStopFailed => 'Couldn’t stop. Tap “Stop” on the floating bar or notification.';
@@ -12546,14 +12545,14 @@ class L10nEn extends L10n {
 
   @override
   String get phoneRestrictedTryOverlay =>
-      'First try turning on AgentPort in floating window settings. When “Restricted setting” appears, tap “OK”. The option below appears only after this step.';
+      'First try turning on Xagent in floating window settings. When “Restricted setting” appears, tap “OK”. The option below appears only after this step.';
 
   @override
-  String get phoneRestrictedBackOverlay => 'Return to floating window settings and turn on AgentPort.';
+  String get phoneRestrictedBackOverlay => 'Return to floating window settings and turn on Xagent.';
 
   @override
   String get phoneRestrictedHuaweiOverlay =>
-      'HarmonyOS 4 and earlier usually skip this step. Turn on AgentPort directly in floating window settings.';
+      'HarmonyOS 4 and earlier usually skip this step. Turn on Xagent directly in floating window settings.';
 
   @override
   String get phoneRestrictedHuaweiAccessibility =>
@@ -13073,7 +13072,7 @@ class L10nEn extends L10n {
   String get phoneControlEnabledPending => 'On · Takes effect when the engine starts';
 
   @override
-  String get phoneReturnAfterDone => 'Back to AgentPort when done';
+  String get phoneReturnAfterDone => 'Back to Xagent when done';
 
   @override
   String get phoneReturnAfterDoneHint => 'Closes the bar, opens the chat';
@@ -13618,15 +13617,15 @@ class L10nEn extends L10n {
 
   @override
   String get phoneBackgroundGuideBody =>
-      'When a step needs your decision, a AgentPort card appears. If the card is unavailable, the app tries a notification or returns here. Allow phone-control notifications and pop-up alerts in system settings.';
+      'When a step needs your decision, a Xagent card appears. If the card is unavailable, the app tries a notification or returns here. Allow phone-control notifications and pop-up alerts in system settings.';
 
   @override
   String get phoneBackgroundOemHint =>
-      'In the system permissions for AgentPort, check “Display pop-up windows while running in the background”, if available. Allowing it can help the app return automatically. Menu names vary by system version.';
+      'In the system permissions for Xagent, check “Display pop-up windows while running in the background”, if available. Allowing it can help the app return automatically. Menu names vary by system version.';
 
   @override
   String get phoneBackgroundReturnHint =>
-      'If the app does not return when a task finishes, tap “Task complete · View result”. If system notifications or background windows are blocked, you may need to open AgentPort yourself.';
+      'If the app does not return when a task finishes, tap “Task complete · View result”. If system notifications or background windows are blocked, you may need to open Xagent yourself.';
 
   @override
   String get phoneBackgroundGotIt => 'Got it';
@@ -13639,7 +13638,7 @@ class L10nEn extends L10n {
 
   @override
   String get phonePrivilegedUpgrade =>
-      'This app build does not support that privileged channel. Update AgentPort to use it.';
+      'This app build does not support that privileged channel. Update Xagent to use it.';
 
   @override
   String get phonePrivilegedSui => 'Sui';
@@ -13674,11 +13673,11 @@ class L10nEn extends L10n {
   String get phonePrivilegedSuggested => 'Suggested';
 
   @override
-  String get phonePrivilegedRootRiskTitle => 'Give AgentPort root access?';
+  String get phonePrivilegedRootRiskTitle => 'Give Xagent root access?';
 
   @override
   String get phonePrivilegedRootRiskBody =>
-      'Your root manager (Magisk, KernelSU or APatch) will ask you. If you allow it, AgentPort runs its own background service as root. It asks again on its own after a disconnect or restart only with “Keep root channel” on.';
+      'Your root manager (Magisk, KernelSU or APatch) will ask you. If you allow it, Xagent runs its own background service as root. It asks again on its own after a disconnect or restart only with “Keep root channel” on.';
 
   @override
   String phoneKeepTitle(String mode) {
@@ -13694,15 +13693,15 @@ class L10nEn extends L10n {
 
   @override
   String get phoneKeepRootDescription =>
-      'After a drop, an app restart or a reboot, AgentPort asks your root manager again by itself. The manager still decides.';
+      'After a drop, an app restart or a reboot, Xagent asks your root manager again by itself. The manager still decides.';
 
   @override
   String get phoneKeepSharedDescription =>
-      'After a drop, an app restart or a reboot, AgentPort reconnects with the permission it already has. It never asks for permission.';
+      'After a drop, an app restart or a reboot, Xagent reconnects with the permission it already has. It never asks for permission.';
 
   @override
   String get phoneKeepAdbDescription =>
-      'After a drop, an app restart or a reboot, AgentPort reconnects over Wi‑Fi with the existing pairing. With the permission from “Restore accessibility automatically”, it also tries once to turn on wireless debugging.';
+      'After a drop, an app restart or a reboot, Xagent reconnects over Wi‑Fi with the existing pairing. With the permission from “Restore accessibility automatically”, it also tries once to turn on wireless debugging.';
 
   @override
   String get phoneKeepRestoring => 'Reconnecting';
@@ -13852,7 +13851,7 @@ class L10nEn extends L10n {
 
   @override
   String get phoneModeAutoNote =>
-      'System settings and permission pages, passwords and verification codes, and AgentPort itself stay with you. Banking and payment apps are off limits by default; you can change that in Settings.';
+      'System settings and permission pages, passwords and verification codes, and Xagent itself stay with you. Banking and payment apps are off limits by default; you can change that in Settings.';
 
   @override
   String get phoneModeAutoUnlockNote =>
@@ -13871,7 +13870,7 @@ class L10nEn extends L10n {
   String get phoneYoursSecrets => 'Passwords and verification codes';
 
   @override
-  String get phoneYoursOwnApp => 'AgentPort itself';
+  String get phoneYoursOwnApp => 'Xagent itself';
 
   @override
   String get phoneYoursDenyList => 'Apps set to Hands off in App rules, banking and payment by default';
@@ -13895,10 +13894,10 @@ class L10nEn extends L10n {
   String get phoneUnlockSecretsHint => 'Fill in passwords, verification and payment codes';
 
   @override
-  String get phoneUnlockOwnApp => 'AgentPort itself';
+  String get phoneUnlockOwnApp => 'Xagent itself';
 
   @override
-  String get phoneUnlockOwnAppHint => 'Tap and type inside AgentPort';
+  String get phoneUnlockOwnAppHint => 'Tap and type inside Xagent';
 
   @override
   String get phoneUnlockBusy => 'Can’t turn on while a task is running';
@@ -13931,7 +13930,7 @@ class L10nEn extends L10n {
   String get phoneUnlockConfirmSecretsTitle => 'Let AI fill in passwords and codes?';
 
   @override
-  String get phoneUnlockConfirmOwnAppTitle => 'Let AI operate AgentPort itself?';
+  String get phoneUnlockConfirmOwnAppTitle => 'Let AI operate Xagent itself?';
 
   @override
   String get phoneUnlockCanTitle => 'Once on, AI can';
@@ -13977,10 +13976,10 @@ class L10nEn extends L10n {
   String get phoneUnlockSecretsRisk2 => 'It could complete a payment or transfer you didn’t intend';
 
   @override
-  String get phoneUnlockOwnAppCan1 => 'Tap and type inside AgentPort, including changing settings';
+  String get phoneUnlockOwnAppCan1 => 'Tap and type inside Xagent, including changing settings';
 
   @override
-  String get phoneUnlockOwnAppCan2 => 'Read conversations and settings on AgentPort’s screens';
+  String get phoneUnlockOwnAppCan2 => 'Read conversations and settings on Xagent’s screens';
 
   @override
   String get phoneUnlockOwnAppRisk1 =>
@@ -13997,7 +13996,7 @@ class L10nEn extends L10n {
 
   @override
   String get phoneUnlockDisclaimer3 =>
-      'Any resulting loss to your accounts, money, data or device is yours to bear. AgentPort and its developers accept no liability.';
+      'Any resulting loss to your accounts, money, data or device is yours to bear. Xagent and its developers accept no liability.';
 
   @override
   String get phoneUnlockDisclaimer4 => 'Turn it on only when you need it, and off when you’re done.';
@@ -14500,7 +14499,7 @@ class L10nEn extends L10n {
   String get pluginsFileWriteFailed => 'Couldn’t write the file';
 
   @override
-  String get pluginsProfileTitle => 'AgentPort settings';
+  String get pluginsProfileTitle => 'Xagent settings';
 
   @override
   String get pluginsGistTokenInvalid => 'GitHub token is invalid or lacks Gist permission';
@@ -15098,7 +15097,7 @@ class L10nEn extends L10n {
 
   @override
   String get pluginsNotificationSettingsFailed =>
-      'Couldn’t open system settings. Turn on notifications in Settings → Apps → AgentPort → Notifications.';
+      'Couldn’t open system settings. Turn on notifications in Settings → Apps → Xagent → Notifications.';
 
   @override
   String get pluginsSystemNotificationsOff => 'System notifications are off';
@@ -15376,7 +15375,7 @@ class L10nEn extends L10n {
   String get pluginsShareOpenFailed => 'Couldn’t open this share code';
 
   @override
-  String get pluginsPluginShareTitle => 'AgentPort plugin';
+  String get pluginsPluginShareTitle => 'Xagent plugin';
 
   @override
   String get pluginsShareSheetOpenFailed => 'Couldn’t open sharing';
@@ -15653,7 +15652,7 @@ class L10nEn extends L10n {
 
   @override
   String plugslotsIssueNeedsApp(String version) {
-    return 'Needs AgentPort $version or later';
+    return 'Needs Xagent $version or later';
   }
 
   @override
@@ -16151,7 +16150,7 @@ class L10nEn extends L10n {
   String get remoteErrHostNotOwned => 'Host isn’t in your DSH Remote account';
 
   @override
-  String get remoteErrUpdateNeeded => 'Version mismatch. Update AgentPort and the host’s remote plugin';
+  String get remoteErrUpdateNeeded => 'Version mismatch. Update Xagent and the host’s remote plugin';
 
   @override
   String get remoteErrVersionIncompatible => 'Update DSH or the remote plugin on the host';
@@ -17718,7 +17717,7 @@ class L10nEn extends L10n {
 
   @override
   String get remotePairNeedsDeepSeekBody =>
-      'Pairing needs the DeepSeek account signed in on AgentPort. Only its account ID goes along, to label this phone; no password, cookie or token.';
+      'Pairing needs the DeepSeek account signed in on Xagent. Only its account ID goes along, to label this phone; no password, cookie or token.';
 
   @override
   String get remotePairScanHint => 'Point the camera at the pairing code the Remote plugin shows on your computer';
@@ -17816,7 +17815,7 @@ class L10nEn extends L10n {
 
   @override
   String remotePairOtherServerBody(String server) {
-    return 'This code is from $server, not the Remote server AgentPort uses now. Switch to it and continue? Each server keeps its own sign-in.';
+    return 'This code is from $server, not the Remote server Xagent uses now. Switch to it and continue? Each server keeps its own sign-in.';
   }
 
   @override
@@ -17826,7 +17825,7 @@ class L10nEn extends L10n {
   String get remotePairScanAgain => 'Scan again';
 
   @override
-  String get remotePairErrInvalidCode => 'That isn’t a AgentPort pairing code';
+  String get remotePairErrInvalidCode => 'That isn’t a Xagent pairing code';
 
   @override
   String get remotePairErrOtherServer => 'This code is from another Remote server';
@@ -17929,7 +17928,7 @@ class L10nEn extends L10n {
 
   @override
   String get riskPetOverlayBody =>
-      'Turn on “Display over other apps” for AgentPort in system settings so your pet can appear outside the app.';
+      'Turn on “Display over other apps” for Xagent in system settings so your pet can appear outside the app.';
 
   @override
   String get riskPetOverlayAction => 'Open settings';
@@ -17945,19 +17944,19 @@ class L10nEn extends L10n {
 
   @override
   String askAiAboutApp(String question) {
-    return 'About the AgentPort app: $question';
+    return 'About the Xagent app: $question';
   }
 
   @override
   String askAiWithGuide(String question) {
-    return 'About the AgentPort app: $question\nPlease answer from the attached guide.';
+    return 'About the Xagent app: $question\nPlease answer from the attached guide.';
   }
 
   @override
-  String get askAiNoGuide => 'This host doesn’t have the AgentPort guide, so answers may be off';
+  String get askAiNoGuide => 'This host doesn’t have the Xagent guide, so answers may be off';
 
   @override
-  String get askAiQuestionOverview => 'What can AgentPort do, and where should I start?';
+  String get askAiQuestionOverview => 'What can Xagent do, and where should I start?';
 
   @override
   String get askAiQuestionPhoneControl => 'How does phone control work, and what are the risks?';
@@ -19456,7 +19455,7 @@ class L10nEn extends L10n {
 
   @override
   String shellSkillInstallPrompt(String skill) {
-    return 'Install the AgentPort interface skill $skill on this host:';
+    return 'Install the Xagent interface skill $skill on this host:';
   }
 
   @override
@@ -19951,16 +19950,16 @@ class L10nEn extends L10n {
     String _temp0 = intl.Intl.pluralLogic(
       hours,
       locale: localeName,
-      other: 'I’ve kept you company in AgentPort for $hours hours now~',
-      one: 'I’ve kept you company in AgentPort for an hour now~',
-      zero: 'I’ve kept you company in AgentPort for half an hour now~',
+      other: 'I’ve kept you company in Xagent for $hours hours now~',
+      one: 'I’ve kept you company in Xagent for an hour now~',
+      zero: 'I’ve kept you company in Xagent for half an hour now~',
     );
     return '$_temp0';
   }
 
   @override
   String get starPromptBody =>
-      'AgentPort is free and open source. If it’s made your phone a little nicer to use, please give it a Star — it means so much to this little whale!';
+      'Xagent is free and open source. If it’s made your phone a little nicer to use, please give it a Star — it means so much to this little whale!';
 
   @override
   String get starPromptPlea => 'Pretty please~ It really matters!!';
@@ -19975,7 +19974,7 @@ class L10nEn extends L10n {
   String get starPromptLater => 'Maybe later';
 
   @override
-  String get starSettingsTitle => 'Star AgentPort on GitHub';
+  String get starSettingsTitle => 'Star Xagent on GitHub';
 
   @override
   String get hubStartPage => 'Start page';
@@ -20006,7 +20005,7 @@ class L10nEn extends L10n {
       'The startup token arrived, but the local service port did not become ready. Check the logs.';
 
   @override
-  String get stateDiagnosticsSubject => 'AgentPort diagnostics bundle';
+  String get stateDiagnosticsSubject => 'Xagent diagnostics bundle';
 
   @override
   String get stateStoragePermission => 'No storage permission to save to Downloads';
@@ -21338,7 +21337,7 @@ class L10nEn extends L10n {
   String get systemActionsWaitingEngine => 'On, waiting for the local engine';
 
   @override
-  String get systemActionsOffScreen => 'On, works once you\'re back in AgentPort';
+  String get systemActionsOffScreen => 'On, works once you\'re back in Xagent';
 
   @override
   String get systemActionsConnecting => 'Connecting';
@@ -21359,11 +21358,11 @@ class L10nEn extends L10n {
   String get systemActionsRemoteHint => 'System actions only work in the local engine\'s chats';
 
   @override
-  String get systemActionsOnScreenTitle => 'Only works with AgentPort on screen';
+  String get systemActionsOnScreenTitle => 'Only works with Xagent on screen';
 
   @override
   String get systemActionsOnScreenBody =>
-      'The system doesn\'t let background apps do these. After the AI opens another app, it can\'t go on until you\'re back in AgentPort.';
+      'The system doesn\'t let background apps do these. After the AI opens another app, it can\'t go on until you\'re back in Xagent.';
 
   @override
   String get systemActionsCanTitle => 'What it can do';
@@ -21470,7 +21469,7 @@ class L10nEn extends L10n {
 
   @override
   String get systemActionsDisclosureWhenBody =>
-      'Only when a chat calls for it and AgentPort is on screen. It asks each time by default, and not in chats with full access.';
+      'Only when a chat calls for it and Xagent is on screen. It asks each time by default, and not in chats with full access.';
 
   @override
   String get systemActionsDisclosureWhoTitle => 'Who gets what';
@@ -21496,7 +21495,7 @@ class L10nEn extends L10n {
 
   @override
   String get systemActionsHandoffNote =>
-      'When you\'re done, come back to AgentPort and press Continue. That only says you confirmed; the AI can\'t see what happened in other apps.';
+      'When you\'re done, come back to Xagent and press Continue. That only says you confirmed; the AI can\'t see what happened in other apps.';
 
   @override
   String get systemActionsHandoffFailed => 'That didn\'t count. If the prompt is still here, press it again';
@@ -21526,7 +21525,7 @@ class L10nEn extends L10n {
   String get systemActionsResultUnsupported => 'HarmonyOS doesn\'t support this action. Nothing ran.';
 
   @override
-  String get systemActionsResultOffScreen => 'AgentPort wasn\'t on screen. Nothing ran.';
+  String get systemActionsResultOffScreen => 'Xagent wasn\'t on screen. Nothing ran.';
 
   @override
   String get systemActionsResultUnavailable =>
@@ -22693,7 +22692,7 @@ class L10nEn extends L10n {
   }
 
   @override
-  String get tavernStorybookMadeWith => 'Written in the AgentPort tavern';
+  String get tavernStorybookMadeWith => 'Written in the Xagent tavern';
 
   @override
   String get tavernStorybookContents => 'Contents';
@@ -25495,7 +25494,7 @@ class L10nEn extends L10n {
 
   @override
   String get updateSettingsOpenFailedMessage =>
-      'Allow “Install unknown apps” in Settings → Apps → AgentPort, then return to install.';
+      'Allow “Install unknown apps” in Settings → Apps → Xagent, then return to install.';
 
   @override
   String get updateInstallCancelled => 'Installation cancelled';
@@ -25515,7 +25514,7 @@ class L10nEn extends L10n {
 
   @override
   String get updateSignatureMismatchMessage =>
-      'The AgentPort on your phone has a different signature (usually a test build). Uninstall it before installing this version. Uninstalling erases your chats, Linux environment, and settings.';
+      'The Xagent on your phone has a different signature (usually a test build). Uninstall it before installing this version. Uninstalling erases your chats, Linux environment, and settings.';
 
   @override
   String get updateWrongPackage => 'This isn’t a DSH package';
@@ -25580,7 +25579,7 @@ class L10nEn extends L10n {
   String get updateNoReleaseNotes => 'No release notes for this version.';
 
   @override
-  String get updateInstallKeepsData => 'AgentPort closes to install. Your chats and settings stay.';
+  String get updateInstallKeepsData => 'Xagent closes to install. Your chats and settings stay.';
 
   @override
   String get updateNoCompatiblePackage => 'No package for this phone';
@@ -25615,7 +25614,7 @@ class L10nEn extends L10n {
   String get updateReadyToInstall => 'Verified and ready to install.';
 
   @override
-  String get updateAllowInstall => 'Allow AgentPort to install apps';
+  String get updateAllowInstall => 'Allow Xagent to install apps';
 
   @override
   String get updateAllowInstallMessage =>
@@ -25689,7 +25688,7 @@ class L10nEn extends L10n {
   String get usageStatsTitle => 'Send anonymous usage stats';
 
   @override
-  String get usageStatsSection => 'Improve AgentPort';
+  String get usageStatsSection => 'Improve Xagent';
 
   @override
   String get usageStatsFooter =>
@@ -25699,7 +25698,7 @@ class L10nEn extends L10n {
   String get usageNoticeBody => 'No chats or personal info.\nTurn off anytime.';
 
   @override
-  String get usageUpgradeNotice => 'New: anonymous usage stats, to help improve AgentPort.\nNo chats or personal info.';
+  String get usageUpgradeNotice => 'New: anonymous usage stats, to help improve Xagent.\nNo chats or personal info.';
 
   @override
   String get usageUpgradeLearn => 'Learn more';
@@ -25844,7 +25843,7 @@ class L10nEn extends L10n {
   String get viewBalanceNoAlert => 'Off';
 
   @override
-  String get viewBalanceBannerHidden => 'Balance alert hidden until AgentPort restarts';
+  String get viewBalanceBannerHidden => 'Balance alert hidden until Xagent restarts';
 
   @override
   String get viewBalanceTurnOff => 'Turn off';
@@ -26457,7 +26456,7 @@ class L10nEn extends L10n {
   String get viewTipKeyboard => 'With a keyboard: Ctrl+Enter sends, Esc twice stops';
 
   @override
-  String get viewTipShareIn => 'Share text or images to AgentPort from another app to start a new chat with them';
+  String get viewTipShareIn => 'Share text or images to Xagent from another app to start a new chat with them';
 
   @override
   String get viewTipShareSelect => 'When sharing a chat, long-press and slide to pick several messages at once';
@@ -26698,7 +26697,7 @@ class L10nEn extends L10n {
 
   @override
   String viewContinueHeader(String value) {
-    return '> Shared AgentPort chat · $value\n';
+    return '> Shared Xagent chat · $value\n';
   }
 
   @override
@@ -26753,7 +26752,7 @@ class L10nEn extends L10n {
 
   @override
   String viewShareLinkText(String first, String second) {
-    return '“$first” · AgentPort chat\n$second';
+    return '“$first” · Xagent chat\n$second';
   }
 
   @override
@@ -26772,7 +26771,7 @@ class L10nEn extends L10n {
   }
 
   @override
-  String get viewShareFileHint => 'Replay and continue in AgentPort';
+  String get viewShareFileHint => 'Replay and continue in Xagent';
 
   @override
   String get viewShareWebHint => 'Opens in any browser, even offline';
@@ -27834,7 +27833,7 @@ class L10nEn extends L10n {
 
   @override
   String workshopMinApp(String version) {
-    return 'Needs AgentPort $version or later.';
+    return 'Needs Xagent $version or later.';
   }
 
   @override

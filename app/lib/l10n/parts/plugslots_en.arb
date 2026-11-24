@@ -104,7 +104,7 @@
       }
     }
   },
-  "plugslotsIssueNeedsApp": "Needs AgentPort {version} or later",
+  "plugslotsIssueNeedsApp": "Needs Xagent {version} or later",
   "@plugslotsIssueNeedsApp": {
     "placeholders": {
       "version": {

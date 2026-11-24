@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="phone_prompt_approval_title">AgentPort · Approval</string>
-    <string name="phone_prompt_review_title">AgentPort · Review needed</string>
-    <string name="phone_prompt_native_title">AgentPort · Phone control</string>
-    <string name="phone_prompt_handoff_title">AgentPort · Your turn</string>
+    <string name="phone_prompt_approval_title">Xagent · Approval</string>
+    <string name="phone_prompt_review_title">Xagent · Review needed</string>
+    <string name="phone_prompt_native_title">Xagent · Phone control</string>
+    <string name="phone_prompt_handoff_title">Xagent · Your turn</string>
     <string name="phone_prompt_allow_once">Allow once</string>
     <string name="phone_prompt_allow_app">Allow this turn</string>
     <string name="phone_prompt_reject">Cancel</string>
@@ -13,6 +13,6 @@
     <string name="phone_prompt_continue">Continue</string>
     <string name="phone_prompt_remaining">%1$d s remaining · no response will not allow an action</string>
     <string name="phone_prompt_result_channel">Phone control results</string>
-    <string name="phone_prompt_result_title">AgentPort · Task complete</string>
+    <string name="phone_prompt_result_title">Xagent · Task complete</string>
     <string name="phone_prompt_result_text">View results</string>
 </resources>

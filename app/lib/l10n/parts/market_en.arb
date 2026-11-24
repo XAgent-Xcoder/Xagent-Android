@@ -1,12 +1,12 @@
 {
   "marketSectionOfficial": "Official",
-  "marketSectionAdapted": "Made for AgentPort",
+  "marketSectionAdapted": "Made for Xagent",
   "marketSectionAll": "All",
   "marketSectionLoading": "Loading…",
   "marketSectionFailed": "The official catalogue didn't load",
   "marketSectionEmpty": "None yet",
   "marketTierOfficial": "Official",
-  "marketTierAdapted": "Made for AgentPort",
+  "marketTierAdapted": "Made for Xagent",
   "marketRiskMedium": "Medium risk",
   "marketRiskHigh": "High risk",
   "marketFlagInstallScripts": "Runs install scripts",
@@ -21,8 +21,8 @@
   "marketFlagFilesystemBody": "Writes to paths outside the workspace",
   "marketFlagObfuscated": "Hard to review",
   "marketFlagObfuscatedBody": "Has large minified or obfuscated files; hard to tell what they do",
-  "marketFlagNotAdapted": "Not made for AgentPort",
-  "marketFlagNotAdaptedBody": "Declares no AgentPort native protocol, so it has no native screens in the app",
+  "marketFlagNotAdapted": "Not made for Xagent",
+  "marketFlagNotAdaptedBody": "Declares no Xagent native protocol, so it has no native screens in the app",
   "marketFlagOtherBody": "Another trait the automatic checks reported",
   "marketChecksTitle": "Automatic checks",
   "marketChecksClean": "No risky traits found",
@@ -53,8 +53,8 @@
   },
   "marketRiskConfirmAction": "Install anyway",
   "marketPinnedVersion": "Pinned version",
-  "marketRequiresApp": "Requires AgentPort",
-  "marketNeedsApp": "Needs AgentPort {version} or later",
+  "marketRequiresApp": "Requires Xagent",
+  "marketNeedsApp": "Needs Xagent {version} or later",
   "@marketNeedsApp": {
     "placeholders": {
       "version": {
