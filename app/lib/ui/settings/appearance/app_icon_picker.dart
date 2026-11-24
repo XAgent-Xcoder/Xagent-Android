@@ -266,20 +266,14 @@ class _IconPainter extends CustomPainter {
         const Rect.fromLTWH(0, 0, 108, 108),
         Paint()..shader = ui.Gradient.linear(AppIconArt.start, AppIconArt.end, [art.from, art.to]),
       );
-    switch (art.glyph) {
-      case AppIconGlyph.mono:
-        final paint = Paint()..color = art.mono!;
-        canvas
-          ..drawPath(BrandGlyph.body, paint)
-          ..drawPath(BrandGlyph.bubble, paint);
-      case AppIconGlyph.glassDark || AppIconGlyph.glassLight:
-        final dark = art.glyph == AppIconGlyph.glassDark;
-        canvas
-          ..drawPath(BrandGlyph.body, Paint()..shader = dark ? BrandGlyph.tailDark : BrandGlyph.tailLight)
-          ..drawPath(BrandGlyph.fin, Paint()..shader = dark ? BrandGlyph.finDark : BrandGlyph.finLight)
-          ..drawPath(BrandGlyph.belly, Paint()..shader = dark ? BrandGlyph.bellyDark : BrandGlyph.bellyLight)
-          ..drawPath(BrandGlyph.bubble, Paint()..shader = dark ? BrandGlyph.bubbleDark : BrandGlyph.bubbleLight);
-    }
+    // The X in the 108 grid, the same fit as the launcher's foreground
+    // (drawable/xagent_fg.xml): scale 0.14, offset to the grid's centre.
+    canvas
+      ..save()
+      ..scale(0.14)
+      ..translate(29.01, 34.4);
+    BrandGlyph.paint(canvas, art.glyph == AppIconGlyph.mono ? art.mono : null);
+    canvas.restore();
     canvas
       ..restore()
       // Half of it falls outside the clip: a 1 px line just inside the edge.
