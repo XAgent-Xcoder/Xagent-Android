@@ -13,10 +13,10 @@ import 'pet_library.dart';
 import 'pet_state.dart';
 
 /// The pets that ship with the app, in picker order.
-const builtInPets = ['deepy-whale', 'whale-girl'];
+const builtInPets = <String>[];
 
 /// The default pet.
-const defaultPetId = 'deepy-whale';
+const defaultPetId = noPetId;
 
 /// Explicit choice for the existing Android overlay. Pixel remains the default.
 enum PetOverlayRenderer {
@@ -240,7 +240,7 @@ class PetPrefsController extends Notifier<PetPrefs> {
   /// default is no pet, would turn on 「App 外显示」 with nothing to show.
   Future<void> adoptDefault() async {
     await _loaded;
-    if (!ref.mounted || state.packExplicit) return;
+    if (builtInPets.isEmpty || !ref.mounted || state.packExplicit) return;
     await setPack(defaultPetId);
   }
 

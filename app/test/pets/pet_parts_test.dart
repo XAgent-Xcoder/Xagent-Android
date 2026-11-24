@@ -3,6 +3,7 @@
 // (the pet's bubble replaces the glass banner while it is on screen), the
 // empty state's whale, and 宠物设置.
 
+import 'package:dsh_app/pets/pet_pack.dart';
 import 'package:dsh_app/pets/pet_prefs.dart';
 import 'package:dsh_app/pets/pet_signals.dart';
 import 'package:dsh_app/pets/pet_state.dart';
@@ -22,6 +23,16 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import '../support/english_preview.dart';
 import 'support.dart';
+
+/// Injects a fixed set of brought pets into the picker.
+class _FixedPets extends UserPetsController {
+  _FixedPets(this.packs);
+
+  final List<PetPack> packs;
+
+  @override
+  Future<List<PetPack>> build() async => packs;
+}
 
 ChatAlert alert(AlertKind kind, String id) =>
     ChatAlert(host: HostRef.local, sessionId: id, kind: kind, key: turnKey, title: '标题', text: '这一轮已完成');
@@ -210,6 +221,8 @@ void main() {
   });
 
   group('宠物设置', () {
+    // The built-in packs are gone (brand cleanup); inject them as brought pets
+    // so the picker still lists them and the interaction tests stay meaningful.
     Future<ProviderContainer> page(WidgetTester tester) async {
       usePhoneView(tester);
       final clock = TestClock();
@@ -219,7 +232,8 @@ void main() {
           overrides: [
             petClockProvider.overrideWithValue(clock.call),
             petPackProvider.overrideWith((ref, id) async => diskPack(id)),
-            petPrefsProvider.overrideWith(() => FixedPetPrefs(const PetPrefs(loaded: true))),
+            userPetsProvider.overrideWith(() => _FixedPets([girl, deepy])),
+            petPrefsProvider.overrideWith(() => FixedPetPrefs(PetPrefs(packId: girl.id, loaded: true))),
           ],
         ),
       );

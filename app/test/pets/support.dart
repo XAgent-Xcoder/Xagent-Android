@@ -5,6 +5,7 @@
 
 import 'dart:convert';
 import 'dart:io';
+import 'dart:typed_data';
 
 import 'package:dsh_app/pets/pet_mood.dart';
 import 'package:dsh_app/pets/pet_pack.dart';
@@ -35,6 +36,15 @@ PetPack diskPack(String id) =>
 final deepy = diskPack('deepy-whale');
 final girl = diskPack('whale-girl');
 
+/// Reads the shipped packs' sheets straight off disk (pack.json already does).
+/// The built-in packs are test fixtures, not shipped assets: with the pubspec
+/// entry gone, rootBundle no longer serves them, so the tests read the PNGs the
+/// same way they read the manifest.
+class _DiskBundle extends CachingAssetBundle {
+  @override
+  Future<ByteData> load(String key) async => ByteData.sublistView(File(key).readAsBytesSync());
+}
+
 /// Decodes [anims] of [pack] (default: every animation it may play in a test).
 Future<void> warmSheets(WidgetTester tester, PetPack pack, [Iterable<PetAnimation>? anims]) async {
   final all = anims ?? pack.animations.values;
@@ -42,8 +52,9 @@ Future<void> warmSheets(WidgetTester tester, PetPack pack, [Iterable<PetAnimatio
   PetSheets.enabled = true;
   PetSheets.instance.pin(pack, pack.animFor(PetStateName.idle));
   await tester.runAsync(() async {
+    final bundle = _DiskBundle();
     for (final anim in all) {
-      final image = await PetSheets.instance.load(pack, anim, rootBundle);
+      final image = await PetSheets.instance.load(pack, anim, bundle);
       image.dispose();
     }
   });
