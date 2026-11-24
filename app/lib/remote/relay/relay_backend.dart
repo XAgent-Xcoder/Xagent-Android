@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:dsh_client/dsh_client.dart';
 
 import '../../l10n/l10n.dart';
+import '../../state/balance_state.dart' show DeepSeekBalance;
 import '../link_status.dart';
 
 /// A sign-in provider the Server offers for browser sign-in
@@ -21,7 +22,7 @@ class RelayAuthProvider {
 
 /// Signed-in DSH Remote (ds-harness-remote) account.
 class RelayUser {
-  const RelayUser({required this.id, required this.displayName, this.provider, this.userId});
+  const RelayUser({required this.id, required this.displayName, this.provider, this.userId, this.avatarUrl});
 
   final String id;
   final String displayName;
@@ -33,6 +34,11 @@ class RelayUser {
   /// identity, used to isolate account data across accounts. Null on older
   /// deployments (and on QR sign-ins, which do not report one).
   final String? userId;
+
+  /// The account's avatar, when the Server reports one (Phase B). Null while
+  /// the xcodex balance service is not live; the card then falls back to a
+  /// glyph.
+  final String? avatarUrl;
 }
 
 /// Whether this phone already trusts a Host's identity key.
@@ -183,6 +189,14 @@ abstract class RelayBackend {
 abstract interface class RelayNetworkBackend {
   RemoteNetworkStatus? networkOf(DshClient client);
   Future<RemoteNetworkStatus?> inspectNetwork(DshClient client);
+}
+
+/// Optional balance of the signed-in relay account, without expanding the
+/// account/backend contract. Implemented only when the Server exposes a
+/// balance (Phase B of the xcodex sign-in migration); null when it cannot be
+/// read or the Server offers none.
+abstract interface class RelayBalanceBackend {
+  Future<DeepSeekBalance?> balance();
 }
 
 /// The relay turned off: nothing to sign in to or connect to.

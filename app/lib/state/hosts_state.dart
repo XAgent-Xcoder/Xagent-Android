@@ -16,6 +16,7 @@ import '../remote/relay/webrtc_peer.dart';
 import '../remote/secret_store.dart';
 import '../remote/ssh/ssh_host_config.dart';
 import '../remote/ssh/ssh_transport.dart';
+import 'balance_state.dart' show DeepSeekBalance;
 import 'sessions_state.dart';
 import 'read_list_epoch.dart';
 
@@ -756,3 +757,12 @@ class RelayAccountController extends AsyncNotifier<RelayAccountState> {
 final relayAccountProvider = AsyncNotifierProvider<RelayAccountController, RelayAccountState>(
   RelayAccountController.new,
 );
+
+/// The signed-in relay account's balance, when the Server exposes one (Phase B
+/// of the xcodex sign-in migration). Null while the backend does not implement
+/// [RelayBalanceBackend] or the balance cannot be read.
+final relayBalanceProvider = FutureProvider<DeepSeekBalance?>((ref) async {
+  final backend = ref.watch(relayBackendProvider);
+  if (backend is! RelayBalanceBackend) return null;
+  return (backend as RelayBalanceBackend).balance();
+});

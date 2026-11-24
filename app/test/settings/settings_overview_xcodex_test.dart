@@ -5,11 +5,16 @@
 //
 //   flutter test test/settings/settings_overview_xcodex_test.dart
 
+import 'dart:async';
+import 'dart:convert';
+import 'dart:io';
+
 import 'package:dsh_app/remote/relay/relay_backend.dart';
 import 'package:dsh_app/remote/secret_store.dart';
 import 'package:dsh_app/runtime/runtime_bridge.dart';
 import 'package:dsh_app/runtime/runtime_state.dart';
 import 'package:dsh_app/state/account_state.dart';
+import 'package:dsh_app/state/balance_state.dart' show DeepSeekBalance;
 import 'package:dsh_app/state/connection_state.dart';
 import 'package:dsh_app/state/hosts_state.dart';
 import 'package:dsh_app/state/settings_state.dart';
@@ -36,12 +41,74 @@ class _FixedRelayAccount extends RelayAccountController {
   Future<RelayAccountState> build() async => initial;
 }
 
+/// A relay backend that reports a balance (the Phase B seam).
+class _FakeBalanceRelay extends UnavailableRelayBackend implements RelayBalanceBackend {
+  _FakeBalanceRelay(this._balance);
+
+  final DeepSeekBalance? _balance;
+
+  @override
+  Future<DeepSeekBalance?> balance() async => _balance;
+}
+
+/// Answers avatar loads with a solid 1×1 PNG so [Image.network] never reaches the network.
+class _OfflineImages extends HttpOverrides {
+  /// 1×1 black PNG.
+  static final bytes = base64Decode('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=');
+
+  @override
+  HttpClient createHttpClient(SecurityContext? context) => _FakeHttpClient();
+}
+
+class _FakeHttpClient implements HttpClient {
+  @override
+  Future<HttpClientRequest> openUrl(String method, Uri url) async => _FakeRequest();
+
+  @override
+  Future<HttpClientRequest> getUrl(Uri url) async => _FakeRequest();
+
+  @override
+  dynamic noSuchMethod(Invocation invocation) => Future.value(_FakeRequest());
+}
+
+class _FakeRequest implements HttpClientRequest {
+  @override
+  Future<HttpClientResponse> close() async => _FakeResponse();
+
+  @override
+  dynamic noSuchMethod(Invocation invocation) => null;
+}
+
+class _FakeResponse extends Stream<List<int>> implements HttpClientResponse {
+  final Stream<List<int>> _bytes;
+
+  _FakeResponse() : _bytes = Stream<List<int>>.value(_OfflineImages.bytes);
+
+  @override
+  StreamSubscription<List<int>> listen(void Function(List<int> event)? onData,
+      {Function? onError, void Function()? onDone, bool? cancelOnError}) =>
+      _bytes.listen(onData, onError: onError, onDone: onDone, cancelOnError: cancelOnError);
+
+  @override
+  int get statusCode => 200;
+
+  @override
+  int get contentLength => _OfflineImages.bytes.length;
+
+  @override
+  HttpClientResponseCompressionState get compressionState => HttpClientResponseCompressionState.notCompressed;
+
+  @override
+  dynamic noSuchMethod(Invocation invocation) => null;
+}
+
 List<Override> _overrides({
   RuntimeStatus runtime = _missing,
   HostRef host = HostRef.local,
   HostLinkPhase link = HostLinkPhase.connected,
   AppSettings settings = const AppSettings(loaded: true),
   RelayAccountState? relay,
+  RelayBackend? relayBackend,
 }) => [
   localRuntimeProvider.overrideWith(() => FakeRuntime(LocalRuntimeState(loaded: true, status: runtime))),
   settingsProvider.overrideWith(() => FakeSettings(settings)),
@@ -52,6 +119,7 @@ List<Override> _overrides({
   networkKicksProvider.overrideWithValue(const Stream.empty()),
   secretStoreProvider.overrideWithValue(MemorySecretStore()),
   if (relay != null) relayAccountProvider.overrideWith(() => _FixedRelayAccount(relay)),
+  if (relayBackend != null) relayBackendProvider.overrideWithValue(relayBackend),
 ];
 
 Future<void> _pump(WidgetTester tester, List<Override> overrides) async {
@@ -101,5 +169,52 @@ void main() {
     expect(find.text('使用浏览器授权登录'), findsNothing);
     expect(find.text('Joseph'), findsOneWidget);
   });
+
+  testWidgets('xcodex with a balance: the card shows the balance line and avatar', (tester) async {
+    await HttpOverrides.runWithHttpOverrides(
+      () => _pumpAndExpectBalanceAndAvatar(tester),
+      _OfflineImages(),
+    );
+  });
+
+  testWidgets('xcodex avatar shows even without a balance backend', (tester) async {
+    await HttpOverrides.runWithHttpOverrides(
+      () => _pumpAndExpectAvatarOnly(tester),
+      _OfflineImages(),
+    );
+  });
+}
+
+Future<void> _pumpAndExpectBalanceAndAvatar(WidgetTester tester) async {
+  await _pump(
+    tester,
+    _overrides(
+      relay: const RelayAccountState(
+        available: true,
+        server: 'agent.xcodex.vip',
+        user: RelayUser(id: 'xc1', displayName: 'Joseph', avatarUrl: 'https://avatar.example/j.png'),
+      ),
+      relayBackend: _FakeBalanceRelay(const DeepSeekBalance(currency: 'CNY', total: 42.5)),
+    ),
+  );
+  expect(find.text('余额 ¥42.50'), findsOneWidget);
+  expect(find.byType(ClipOval), findsOneWidget);
+}
+
+Future<void> _pumpAndExpectAvatarOnly(WidgetTester tester) async {
+  await _pump(
+    tester,
+    _overrides(
+      relay: const RelayAccountState(
+        available: true,
+        server: 'agent.xcodex.vip',
+        user: RelayUser(id: 'xc1', displayName: 'Joseph', avatarUrl: 'https://avatar.example/j.png'),
+      ),
+      relayBackend: const UnavailableRelayBackend(),
+    ),
+  );
+  expect(find.byType(ClipOval), findsOneWidget);
+  expect(find.text('余额 ¥42.50'), findsNothing);
+  expect(find.text('已登录'), findsOneWidget);
 }
 

@@ -416,6 +416,8 @@ class DshRemoteRelayBackend implements RelayBackend, RelayNetworkBackend, RelayP
 
   // ---------------------------------------------------------------------------
 
+  // RemoteUser has no avatar field yet (Phase B: the Server does not report
+  // one), so avatarUrl stays null until it does.
   static RelayUser _user(remote.RemoteUser user) => RelayUser(
     id: user.deviceId,
     displayName: user.account,

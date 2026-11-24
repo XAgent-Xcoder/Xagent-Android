@@ -406,6 +406,9 @@ class _SettingsOverviewState extends ConsumerState<SettingsOverview> {
     // The xcodex account (the relayed sign-in) outranks the DeepSeek account
     // for the card's identity: it is the one that pays for the remote hosts.
     final xcodex = ref.watch(relayAccountProvider.select((a) => a.value?.user));
+    // The relay account's balance, when the Server exposes one (Phase B seam);
+    // null while the backend has not implemented it.
+    final relayMoney = ref.watch(relayBalanceProvider).value;
 
     // The account's wallets when signed in; otherwise the key's balance.
     final money = account.signedIn && wallets != null ? balanceFromAccount(wallets) : balance.balance;
@@ -425,9 +428,24 @@ class _SettingsOverviewState extends ConsumerState<SettingsOverview> {
     String? hostLink;
     switch (account.phase) {
       case _ when xcodex != null:
-        leading = const OverviewGlyph(AppIcons.account);
+        // Phase B seam: when the relay Server reports a balance, show it like
+        // the DeepSeek branch does; an avatar, when the Server reports one,
+        // replaces the glyph. Both stay null until the Server supplies them.
+        final money = relayMoney;
+        final low = money != null && !money.available;
+        final balanceLine = money == null
+            ? null
+            : low
+                ? l10n.hubSettingsBalanceLow(formatMoney(money))
+                : l10n.hubSettingsBalance(formatMoney(money));
+        final url = xcodex.avatarUrl;
+        leading = url == null
+            ? const OverviewGlyph(AppIcons.account)
+            : ClipOval(
+                child: Image.network(url, width: OverviewCard.avatarSize, height: OverviewCard.avatarSize, fit: BoxFit.cover),
+              );
         title = xcodex.displayName;
-        subtitle = l10n.commonSignedIn;
+        subtitle = balanceLine ?? l10n.commonSignedIn;
       case AccountPhase.signedIn:
         leading = AccountAvatar(profile: account.profile, size: OverviewCard.avatarSize);
         title = account.profile?.displayName ?? l10n.hubSettingsAccount;
