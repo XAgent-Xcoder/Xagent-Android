@@ -76,7 +76,7 @@ class FakeInstaller implements UpdateInstaller {
     this.canInstall = true,
     this.inspection = const ApkInspection(
       valid: true,
-      packageName: 'com.xcoder.agentport',
+      packageName: 'com.xcoder.xagent',
       signatureMatches: true,
     ),
     this.result = const InstallResult(InstallStatus.success),

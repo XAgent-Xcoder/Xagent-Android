@@ -140,7 +140,7 @@ class BackgroundProbeActivity : Activity() {
 
 /** Private Binder messages, never marshalled into the adb/root byte stream. */
 internal object ProbeActivityContract {
-    const val PACKAGE = "com.xcoder.agentport"
+    const val PACKAGE = "com.xcoder.xagent"
     const val ACTIVITY = "$PACKAGE.phone.background.BackgroundProbeActivity"
     const val RECEIVER = "receiver"
     const val NONCE = "nonce"

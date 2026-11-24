@@ -54,7 +54,7 @@ void main() {
         'a11yKeeper': {
           'granted': false,
           'path': 'shizuku',
-          'command': 'adb shell pm grant com.xcoder.agentport android.permission.WRITE_SECURE_SETTINGS',
+          'command': 'adb shell pm grant com.xcoder.xagent android.permission.WRITE_SECURE_SETTINGS',
         },
       },
     ),

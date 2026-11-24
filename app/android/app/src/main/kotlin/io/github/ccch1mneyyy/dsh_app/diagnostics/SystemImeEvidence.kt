@@ -15,7 +15,7 @@ data class SystemImeEvent(
 }
 
 object SystemImeEvidence {
-    const val APP_PACKAGE = "com.xcoder.agentport"
+    const val APP_PACKAGE = "com.xcoder.xagent"
     const val WINDOW_MS = 120_000L
     const val MAX_EVENTS = 64
     const val MAX_BYTES = 128 * 1024
