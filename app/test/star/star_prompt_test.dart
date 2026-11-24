@@ -262,10 +262,7 @@ Future<_Bench> _pumpDialog(
     ),
   );
   await tester.pump();
-  // Decoded for real (FakeAsync never finishes a decode), as the host does before it opens.
-  await tester.runAsync(
-    () => precacheImage(const AssetImage(StarPromptDialog.asset), tester.element(find.byType(Scaffold))),
-  );
+  // The picture is now a vector BrandMark — nothing to pre-cache.
   await tester.tap(find.text('打开'));
   await tester.pump();
   return bench;

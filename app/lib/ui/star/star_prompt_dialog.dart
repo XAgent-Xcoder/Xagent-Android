@@ -26,6 +26,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../l10n/l10n.dart';
 import '../../state/star_prompt.dart';
 import '../common/app_dialog.dart';
+import '../shell/brand_mark.dart';
 import '../theme/app_icons.dart';
 import '../theme/theme.dart';
 
@@ -82,9 +83,6 @@ class StarPromptDialog extends StatelessWidget {
 
   /// Whole hours of use (0: half an hour).
   final int hours;
-
-  /// The picture: 576 px, the 192 dp it is drawn at most, at 3×.
-  static const asset = 'assets/star/star_whale.webp';
 
   /// The picture's side: 30 % of the height the dialog may take, within these.
   static const pictureMax = 192.0;
@@ -253,7 +251,7 @@ class StarPicture extends StatelessWidget {
               gradient: RadialGradient(colors: [glow, glow.withValues(alpha: 0)], stops: const [0.3, 1]),
             ),
           ),
-          Image.asset(StarPromptDialog.asset, fit: BoxFit.contain, excludeFromSemantics: true),
+          Center(child: BrandMark(size: side * 0.62, color: scheme.primary)),
         ],
       ),
     );
