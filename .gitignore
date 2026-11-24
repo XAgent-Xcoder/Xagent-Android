@@ -12,6 +12,8 @@ runtime/.build-*.log
 # Dart / Flutter tool state
 **/.dart_tool/
 app/build/
+# IDE project state (Android Studio / IntelliJ)
+.idea/
 # Gradle writes reports (problems-report.html) here even though Flutter moves the build dir
 app/android/build/
 # build outputs never belong in git
