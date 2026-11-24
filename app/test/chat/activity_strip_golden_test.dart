@@ -213,12 +213,11 @@ void main() {
       WhaleTailState whale() => tester.state(find.byType(WhaleTail));
 
       // No tokens (a long tool call): a slow swim, not a still frame.
-      final start = whale().frame;
+      final start = whale().angle;
       for (var i = 0; i < 20; i++) {
         await tester.pump(const Duration(milliseconds: 100));
       }
-      expect(whale().shownForm, 2);
-      expect(whale().frame, isNot(start), reason: 'still swimming');
+      expect(whale().angle, isNot(start), reason: 'still turning');
       expect(whale().rate, moreOrLessEquals(0.5, epsilon: 0.01));
 
       // Faster: the speed eases up instead of jumping.
@@ -231,30 +230,28 @@ void main() {
       }
       expect(whale().rate, moreOrLessEquals(1, epsilon: 0.01));
 
-      // Another form at once, cross-faded with the old one.
+      // Level 4: the fastest turn.
       set(() => level = 4);
       await tester.pump(const Duration(milliseconds: 16));
-      expect(whale().shownForm, 4);
+      expect(whale().rate, moreOrLessEquals(1, epsilon: 0.01));
 
       // Waiting for the person: the slowest swim, still moving.
       set(() => level = 0);
       for (var i = 0; i < 30; i++) {
         await tester.pump(const Duration(milliseconds: 100));
       }
-      expect(whale().shownForm, 2);
+      expect(whale().angle, isNot(start), reason: 'still turning');
       expect(whale().rate, moreOrLessEquals(0.3, epsilon: 0.01));
       expect(tester.binding.hasScheduledFrame, isTrue, reason: 'ticking');
     });
 
-    testWidgets('still: the still frame, no ticker', (tester) async {
+    testWidgets('still: no ticker', (tester) async {
       await pumpSheet(tester, [const WhaleTail(still: true, color: deepSeekBlue)]);
       await tester.pump(const Duration(milliseconds: 100));
-      final whale = tester.state<WhaleTailState>(find.byType(WhaleTail));
-      expect(whale.shownForm, 1);
       expect(tester.binding.hasScheduledFrame, isFalse);
     });
 
-    testWidgets('reduced motion: the still frame, no ticker', (tester) async {
+    testWidgets('reduced motion: no ticker', (tester) async {
       tester.view.devicePixelRatio = 2;
       tester.view.physicalSize = const Size(780, 400);
       addTearDown(tester.view.reset);
@@ -265,8 +262,6 @@ void main() {
         ),
       );
       await tester.pump(const Duration(milliseconds: 100));
-      final whale = tester.state<WhaleTailState>(find.byType(WhaleTail));
-      expect(whale.shownForm, 1);
       expect(tester.binding.hasScheduledFrame, isFalse);
     });
 
